@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>musicApp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <header class="header">
+      <div class="container">
+        <div class="header-wrapper">
+          <img src="images/background.jpg">
+          <h1 class="header__title">Taste</h1>
+          <h2 class="header__subtitle"><span>Engage</span><br><span>in</span><br><span>art</span></h2>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="#homw" class="main-nav__link">home</a>
+        <a href="#search" class="main-nav__link">search</a>
+        <a href="#dicover" class="main-nav__link">discover</a>
+        </div>
+    </header>
+
+
+
+    <div id="song-list"></div>
+    <script id="template-list-songs" type="text/x-handlebars-template">
+
+      <div class="music">
+        <ul class="music__list">
+          <li class="music__item">
+            <div class="music__song">
+              <h3 class="music__name">{{ title }}</h3>
+              <div class="music__player">
+
+              </div>
+              <ul class="music__details">
+                <li class="music__categories">{{ categories }}</li>
+                <li class="music__ranking">{{ ranking }}</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+    <script src="js/app.js" type="module"></script>
+  </body>
+</html>
