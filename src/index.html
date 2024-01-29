@@ -15,41 +15,18 @@
     <header class="header">
       <div class="container">
         <div class="header-wrapper">
-          <img src="images/background.jpg">
+          <img src="images/background.jpg" alt="background">
           <h1 class="header__title">Taste</h1>
           <h2 class="header__subtitle"><span>Engage</span><br><span>in</span><br><span>art</span></h2>
+          <div class="shadow-box"></div>
         </div>
+        <nav class="main-nav">
+          <a href="#homw" class="main-nav__link">home</a>
+          <a href="#search" class="main-nav__link">search</a>
+          <a href="#dicover" class="main-nav__link">discover</a>
+        </nav>
       </div>
-      <nav class="main-nav">
-        <a href="#homw" class="main-nav__link">home</a>
-        <a href="#search" class="main-nav__link">search</a>
-        <a href="#dicover" class="main-nav__link">discover</a>
-        </div>
     </header>
-
-
-
-    <div id="song-list"></div>
-    <script id="template-list-songs" type="text/x-handlebars-template">
-
-      <div class="music">
-        <ul class="music__list">
-          <li class="music__item">
-            <div class="music__song">
-              <h3 class="music__name">{{ title }}</h3>
-              <div class="music__player">
-
-              </div>
-              <ul class="music__details">
-                <li class="music__categories">{{ categories }}</li>
-                <li class="music__ranking">{{ ranking }}</li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
     <script src="js/app.js" type="module"></script>
