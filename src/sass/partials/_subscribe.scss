@@ -102,6 +102,7 @@
     font-family: $font-app;
     text-transform: uppercase;
     text-align: right;
+    text-align: center;
   }
 }
 
@@ -150,7 +151,6 @@
       left: 43%;
       font-size: 70px;
       letter-spacing: 10px;
-      line-height: 70px;
 
       .name__margin {
         margin-left: 56px;
@@ -187,7 +187,6 @@
       left: 45%;
       font-size: 60px;
       letter-spacing: 8px;
-      line-height: 100%;
 
       .name__margin {
         margin-left: 46px;
@@ -220,26 +219,22 @@
     .disc-details {
       top: 73%;
       font-size: 15px;
-      letter-spacing: 6px;
-      line-height: 100%;
+
+      &__premiere {
+        letter-spacing: 7px;
+      }
     }
 
     &__singer-name {
       top: 40%;
-      left: 45%;
       font-size: 45px;
       letter-spacing: 7px;
-      line-height: 100%;
 
       .name__margin {
         margin-left: 34px;
       }
     }
 
-    &__detail__premiere {
-      letter-spacing: 7px;
-    }
-  
     .photo-disc {
       img {
         max-height: 305px;
@@ -247,10 +242,169 @@
     }
 
     .btn-join-now {
-      top: 57%;
-      left: 28%;
       padding: 23px 13px;
       font-size: 20px;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .landing-section {
+
+    &__title {
+      font-size: 46px;
+      margin-bottom: -23px;
+    }
+
+    .disc-details {
+      font-size: 12px;
+      letter-spacing: 4px;
+      line-height: 100%;
+
+      &__premiere {
+        letter-spacing: 4.5px;
+      }
+    }
+
+    &__singer-name {
+      top: 39%;
+      left: 44%;
+      font-size: 36px;
+      letter-spacing: 5px;
+
+      .name__margin {
+        margin-left: 29px;
+      }
+    }
+
+    .photo-disc {
+      top: 19%;
+
+      img {
+        max-height: 225px;
+      }
+    }
+
+    .btn-join-now {
+      left: 29%;
+      padding: 20px 10px;
+      font-size: 16px;
+      letter-spacing: 5px;
+    }
+  }
+}
+
+@media(max-width: 415px) {
+  .landing-section {
+
+    &__title {
+      font-size: 40px;
+      letter-spacing: 6px;
+    }
+
+    .disc-details {
+      font-size: 9px;
+      letter-spacing: 1px;
+      
+      &__premiere {
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+      }
+    }
+
+    &__singer-name {
+
+      left: 45%;
+      font-size: 20px;
+      letter-spacing: 2px;
+
+      .name__margin {
+        margin-left: 14px;
+      }
+    }
+
+    .photo-disc {
+
+      img {
+        max-height: 125px;
+      }
+    }
+
+    .btn-join-now {
+      padding: 12px 8px;
+      font-size: 13px;
+      letter-spacing: 3px;
+    }
+  }
+}
+
+@media(max-width: 376px) {
+  .landing-section {
+
+    &__title {
+      font-size: 25px;
+      margin-bottom: -13px;
+      letter-spacing: 5px;
+    }
+
+    .disc-details {
+      font-size: 8px;
+      letter-spacing: 0.5px;
+      left: 43%;
+      
+      &__premiere {
+        letter-spacing: 0.5px;
+      }
+    }
+
+    &__singer-name {
+      top: 42%;
+      left: 46%;
+      font-size: 16px;
+
+      .name__margin {
+        margin-left: 11px;
+      }
+    }
+
+    .photo-disc {
+
+      img {
+        max-height: 112px;
+      }
+    }
+
+    .btn-join-now {
+      padding: 7px 8px;
+    }
+  }
+}
+
+@media(max-width: 360px) {
+  .landing-section {
+
+    .disc-details {
+      left: 47%;
+    }
+
+    &__singer-name {
+      left: 45%;
+
+      .name__margin {
+        margin-left: 12px;
+      }
+    }
+
+    .photo-disc {
+      top: 20%;
+
+      img {
+        max-height: 108px;
+      }
+    }
+
+    .btn-join-now {
+      padding: 6px 8px;
     }
   }
 }
