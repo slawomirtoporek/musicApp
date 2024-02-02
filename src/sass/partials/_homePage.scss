@@ -1,0 +1,127 @@
+#songs-list .song {
+  display: flex;
+  margin-bottom: 62px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  
+  &__title {
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $color-light;
+    font-weight: $font-semi-bold;
+    font-family: $font-app;
+    padding: 0 20px;
+    
+    h3 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  .player {
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    letter-spacing: 2px;
+    line-height: 100%;
+    color: $color-grey;
+    padding: 0 25px;
+    font-family: $font-app;
+
+    h3 {
+      margin: 0;
+      font-weight: 200;
+      padding-right: 3px;
+      font-size: 20px;
+    }
+
+    .details-categories {
+      display: flex;
+      flex-direction: row;
+
+      &__list {
+        text-decoration: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      &__item {
+        display: inline-block;
+        font-size: 20px;
+      }
+    }
+    
+    .details-ranking {
+      &__position {
+        font-weight: 200px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+/* Green Audio Player */
+
+.green-audio-player {
+  width: 560px;
+  height: 80px;
+
+  .slider {
+
+    .gap-progress .pin {
+    background-color: $color-main;
+    }
+
+    .gap-progress {
+      background-color: $color-main;
+    }
+  }
+
+  .volume .volume__button.open path {
+    fill: $color-main;
+  }
+}
+
+
+/* Media queries */
+
+@media(max-width: 650px){
+  .green-audio-player {
+    width: 400px;
+    height: 60px;
+  }
+
+  #songs-list .song .details {
+    flex-direction: column;
+    margin: 0 auto;
+
+    h3, 
+    .details-ranking__position,
+    .details-categories__item {
+      font-size: 16px;
+    }
+
+    .details-categories {
+      padding-bottom: 5px;
+    }
+  }
+
+  #songs-list .song__title {
+    font-size: 20px;
+  }
+}
+
+@media(max-width: 425px){
+  .green-audio-player {
+    width: 300px;
+    height: 50px;
+  }
+}

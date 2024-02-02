@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/css/green-audio-player.min.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -27,6 +28,37 @@
         </nav>
       </div>
     </header>
+
+    <section id="songs-list">
+      <div class="wrapper">
+        <div class="song">
+          <div class="song__title">
+            <h3>At The Top David RendaAt</h3>
+          </div>
+          <div class="player">
+            <audio>
+                <source src="songs/At_The_Top_David_Renda.mp3" type="audio/mp3">
+            </audio>
+          </div>
+          <div class="details">
+            <div class="details-categories">
+              <h3>Categories: </h3>
+              <ul class="details-categories__list">
+                <li class="details-categories__item">Slow,</li>
+                <li class="details-categories__item">Melancholy</li>
+              </ul>
+            </div>
+            <div class="details-ranking">
+              <h3 class="details-ranking__position">#4 in the ranking</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script id="template-list-songs" type="text/x-handlebars-template">
+    
+    </script>
 
     <section class="subscribe">
       <div class="container">
@@ -49,6 +81,7 @@
       </div>
     </section>
 
+    <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
     <script src="js/app.js" type="module"></script>
   </body>
