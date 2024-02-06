@@ -6,6 +6,10 @@ export const settings = {
 };
 
 export const select = {
+  templateOf: {
+    listSongs: '#template-list-songs',
+    subscribe: '#template-subscribe',
+  },
   containerOf: {
     player: '.player',
     pages: '#pages',
@@ -26,4 +30,9 @@ export const classNames = {
   nav: {
     active: 'active',
   }
+};
+
+export const templates = {
+  listSongs: Handlebars.compile(document.querySelector(select.templateOf.listSongs).innerHTML),
+  subscribe: Handlebars.compile(document.querySelector(select.templateOf.subscribe).innerHTML),
 };

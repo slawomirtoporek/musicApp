@@ -1,4 +1,6 @@
 import { select, settings, classNames } from './settings.js';
+import SongLibrary from './components/SongLibrary.js';
+import Player from './components/Player.js';
 
 const app = {
 
@@ -53,6 +55,16 @@ const app = {
     }
   },
 
+  displayHomePage: function(){
+    const thisApp = this;
+
+    new SongLibrary(thisApp.data.songs);
+  },
+
+  initPlayer(){
+    new Player(select.containerOf.player);
+  },
+
   initData: function(){
     const thisApp = this;
 
@@ -67,6 +79,8 @@ const app = {
       .then(function(parsedResponse){
         thisApp.data.songs = parsedResponse;
         
+        thisApp.displayHomePage();
+        thisApp.initPlayer();
       });
   },
 
