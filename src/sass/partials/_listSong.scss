@@ -1,9 +1,14 @@
-#songs-list .song {
+.song {
   display: flex;
   margin-bottom: 62px;
   flex-direction: column;
   flex-wrap: wrap;
+  justify-content: center;
   
+  &__title:first-child h3 {
+    margin-top: 0px;
+  }
+
   &__title {
     font-size: 30px;
     letter-spacing: 2px;
@@ -29,12 +34,13 @@
   .details {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     letter-spacing: 2px;
     line-height: 100%;
     color: $color-grey;
     padding: 0 25px;
     font-family: $font-app;
+    margin: 0 auto;
 
     h3 {
       margin: 0;
@@ -51,6 +57,7 @@
         text-decoration: none;
         padding: 0;
         margin: 0;
+        margin-right: 40px;
       }
       
       &__item {
@@ -98,7 +105,7 @@
     height: 60px;
   }
 
-  #songs-list .song .details {
+  .song .details {
     flex-direction: column;
     margin: 0 auto;
 
@@ -113,7 +120,7 @@
     }
   }
 
-  #songs-list .song__title {
+  .song__title {
     font-size: 20px;
   }
 }

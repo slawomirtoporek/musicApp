@@ -55,7 +55,7 @@
 
 .main-nav {
   margin-top: 32px;
-  margin-bottom: 113px;
+  margin-bottom: 78px;
   text-transform: uppercase;
   font-weight: $font-semi-bold;
   color: $color-grey;
@@ -73,6 +73,10 @@
     &:hover {
       color: $color-light;
     }
+  }
+
+  .active {
+    color: $color-light;
   }
 }
 
@@ -192,7 +196,7 @@
 
   .main-nav {
     margin-top: 5px;
-    margin-bottom: 35px;
+    margin-bottom: 60px;
 
     .main-nav__link {
       padding: 0 15px;

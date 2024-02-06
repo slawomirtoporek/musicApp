@@ -22,68 +22,90 @@
           <div class="shadow-box"></div>
         </div>
         <nav class="main-nav">
-          <a href="#homw" class="main-nav__link">home</a>
+          <a href="#home" class="main-nav__link">home</a>
           <a href="#search" class="main-nav__link">search</a>
-          <a href="#dicover" class="main-nav__link">discover</a>
+          <a href="#discover" class="main-nav__link">discover</a>
         </nav>
       </div>
     </header>
 
-    <section id="songs-list">
+    <div id="pages">
+      <section id="home">
+        <div id="home-page"></div>
+        <div id="subscribe"></div>
+      </section>
+      <section id="search">
+        <div class="wrapper">
+          <h2 class="section-title">Search</h2>
+          <div class="search-box">
+            <label for="music-search">Name</label>
+            <input type="search" name="music-search">
+            <button type="submit">Search</button>
+          </div>
+        </div>
+        <div id="search-page"></div>
+      </section>
+      <section id="discover">
+        <div class="wrapper">
+          <h2 class="section-title">Discover</h2>
+          <h3 class="section-subtitle">Give it a try!</h3>
+        </div>
+        <div id="discover-page"></div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <p>All rights reserved</p>
+    </footer>
+
+    <script id="template-list-songs" type="text/x-handlebars-template">
       <div class="wrapper">
         <div class="song">
           <div class="song__title">
-            <h3>At The Top David RendaAt</h3>
+            <h3>{{ author }} - {{ title }}</h3>
           </div>
           <div class="player">
             <audio>
-              <source src="songs/At_The_Top_David_Renda.mp3" type="audio/mp3">
+              <source src="songs/{{ filename }}" type="audio/mp3">
             </audio>
           </div>
           <div class="details">
             <div class="details-categories">
               <h3>Categories: </h3>
               <ul class="details-categories__list">
-                <li class="details-categories__item">Slow,</li>
-                <li class="details-categories__item">Melancholy</li>
+                {{#each categories}}
+                <li class="details-categories__item">{{this}}</li>
+                {{/each}}
               </ul>
             </div>
             <div class="details-ranking">
-              <h3 class="details-ranking__position">#4 in the ranking</h3>
+              <h3 class="details-ranking__position">#{{ranking}} in the ranking</h3>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <script id="template-list-songs" type="text/x-handlebars-template">
-    
     </script>
 
-    <section class="subscribe">
-      <div class="container">
-        <div class="landing-section">
-          <h2 class="landing-section__title">Subscribe now</h2>
-          <img src="images/subscribe.jpg" alt="photo singer Dean Henson">
-          <h2 class="landing-section__singer-name">
-            Dean<br>
-            <span class="name__margin">Hen</span><span class="name__color">son</span>
-          </h2>
-          <div class="photo-disc">
-            <img src="images/artist.jpg" alt="photo album">
+    <script id="template-subscribe" type="text/x-handlebars-template">
+        <div class="container">
+          <div class="landing-section">
+            <h2 class="landing-section__title">Subscribe now</h2>
+            <img src="images/subscribe.jpg" alt="photo singer Dean Henson">
+            <h2 class="landing-section__singer-name">
+              Dean<br>
+              <span class="name__margin">Hen</span><span class="name__color">son</span>
+            </h2>
+            <div class="photo-disc">
+              <img src="images/artist.jpg" alt="photo album">
+            </div>
+            <div class="disc-details">
+              <h3 class="disc-details__premiere">New album</h3>
+              <h3 class="disc-details__avaliable">Available only for subscribers</h3>
+            </div>
+            <a href="#" class="btn-join-now">Join now</a>
           </div>
-          <div class="disc-details">
-            <h3 class="disc-details__premiere">New album</h3>
-            <h3 class="disc-details__avaliable">Available only for subscribers</h3>
-          </div>
-          <a href="#" class="btn-join-now">Join now</a>
         </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <p>All rights reserved</p>
-    </footer>
+    </script>
 
     <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
