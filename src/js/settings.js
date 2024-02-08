@@ -11,7 +11,9 @@ export const select = {
     subscribe: '#template-subscribe',
   },
   containerOf: {
-    player: '.player',
+    playerHome: '#home-page .player',
+    playerDiscover: '#discover-page .player',
+    playerSearch: '#search-page .player',
     pages: '#pages',
     songs: '#home-page',
     discover: '#discover-page',
@@ -20,7 +22,12 @@ export const select = {
   },
   nav: {
     links: '.main-nav a',
-  }
+  },
+  search: {
+    input: '.search-box input',
+    button: '.search-box button',
+    numberSong: '.num-found-songs h3',
+  },
 };
 
 export const classNames = {
@@ -34,5 +41,4 @@ export const classNames = {
 
 export const templates = {
   listSongs: Handlebars.compile(document.querySelector(select.templateOf.listSongs).innerHTML),
-  subscribe: Handlebars.compile(document.querySelector(select.templateOf.subscribe).innerHTML),
 };

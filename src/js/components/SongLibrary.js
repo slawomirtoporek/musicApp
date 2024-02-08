@@ -1,5 +1,6 @@
 import { templates, select } from '../settings.js';
 import { utils } from '../utils.js';
+import Player from './Player.js';
 
 class SongLibrary{
   constructor(data){
@@ -7,8 +8,8 @@ class SongLibrary{
 
     thisSongLibrary.data = data;
     thisSongLibrary.dataSong = {};
-
-    thisSongLibrary.renderSubscribe();
+    thisSongLibrary.dom = {};
+    
     thisSongLibrary.renderSongsList();
   }
 
@@ -18,15 +19,6 @@ class SongLibrary{
     thisSongLibrary.element = utils.createDOMFromHTML(generatedHTML);
     const list = document.querySelector(container);
     list.appendChild(thisSongLibrary.element);
-  }
-
-  renderSubscribe(){
-    const thisSongLibrary = this;
-
-    const generatedHTML = templates.subscribe();
-    thisSongLibrary.elementSubscribe = utils.createDOMFromHTML(generatedHTML);
-    const container = document.querySelector(select.containerOf.subscribe);
-    container.appendChild(thisSongLibrary.elementSubscribe);
   }
 
   extractAuthorNameFromFilename(filename, title){
@@ -73,10 +65,16 @@ class SongLibrary{
 
   renderSongsList(){
     const thisSongLibrary = this;
+
     for(const song of thisSongLibrary.data){
       thisSongLibrary.prepareSongData(song);
       thisSongLibrary.renderSong(thisSongLibrary.dataSong, select.containerOf.songs);
     }
+    thisSongLibrary.initPlayer();
+  }
+
+  initPlayer(){
+    new Player(select.containerOf.playerHome);
   }
 }
 export default SongLibrary;

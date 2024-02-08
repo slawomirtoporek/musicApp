@@ -32,16 +32,36 @@
     <div id="pages">
       <section id="home">
         <div id="home-page"></div>
-        <div id="subscribe"></div>
+        <div class="container">
+          <div class="landing-section">
+            <h2 class="landing-section__title">Subscribe now</h2>
+            <img src="images/subscribe.jpg" alt="photo singer Dean Henson">
+            <h2 class="landing-section__singer-name">
+              Dean<br>
+              <span class="name__margin">Hen</span><span class="name__color">son</span>
+            </h2>
+            <div class="photo-disc">
+              <img src="images/artist.jpg" alt="photo album">
+            </div>
+            <div class="disc-details">
+              <h3 class="disc-details__premiere">New album</h3>
+              <h3 class="disc-details__avaliable">Available only for subscribers</h3>
+            </div>
+            <a href="#" class="btn-join-now">Join now</a>
+          </div>
+        </div>
       </section>
       <section id="search">
         <div class="wrapper">
           <h2 class="section-title">Search</h2>
           <div class="search-box">
             <label for="music-search">Name</label>
-            <input type="search" name="music-search">
-            <button type="submit">Search</button>
+            <input type="text" id="music-search">
+            <button type="button">Search</button>
           </div>
+        </div>
+        <div class="num-found-songs">
+          <h3></h3>
         </div>
         <div id="search-page"></div>
       </section>
@@ -84,27 +104,6 @@
           </div>
         </div>
       </div>
-    </script>
-
-    <script id="template-subscribe" type="text/x-handlebars-template">
-        <div class="container">
-          <div class="landing-section">
-            <h2 class="landing-section__title">Subscribe now</h2>
-            <img src="images/subscribe.jpg" alt="photo singer Dean Henson">
-            <h2 class="landing-section__singer-name">
-              Dean<br>
-              <span class="name__margin">Hen</span><span class="name__color">son</span>
-            </h2>
-            <div class="photo-disc">
-              <img src="images/artist.jpg" alt="photo album">
-            </div>
-            <div class="disc-details">
-              <h3 class="disc-details__premiere">New album</h3>
-              <h3 class="disc-details__avaliable">Available only for subscribers</h3>
-            </div>
-            <a href="#" class="btn-join-now">Join now</a>
-          </div>
-        </div>
     </script>
 
     <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>

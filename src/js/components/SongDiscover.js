@@ -1,5 +1,6 @@
 import { select } from '../settings.js';
 import SongLibrary from './SongLibrary.js';
+import Player from './Player.js';
 
 class SongDiscover extends SongLibrary{
   constructor(data){
@@ -8,11 +9,6 @@ class SongDiscover extends SongLibrary{
 
     thisSongLibrary.randomSong();
     thisSongLibrary.renderSongsList();
-
-  }
-
-  renderSubscribe(){
-    
   }
 
   randomSong(){
@@ -33,7 +29,12 @@ class SongDiscover extends SongLibrary{
       thisSongLibrary.prepareSongData(song);
       thisSongLibrary.renderSong(thisSongLibrary.dataSong, select.containerOf.discover);
     }
-    console.log(song);
+
+    thisSongLibrary.initPlayer();
+  }
+
+  initPlayer(){
+    new Player(select.containerOf.playerDiscover);
   }
 }
 

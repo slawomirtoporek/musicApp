@@ -1,7 +1,7 @@
 import { select, settings, classNames } from './settings.js';
 import SongLibrary from './components/SongLibrary.js';
 import SongDiscover from './components/SongDiscover.js';
-import Player from './components/Player.js';
+import SongSearch from './components/SongSearch.js';
 
 const app = {
 
@@ -68,8 +68,10 @@ const app = {
     new SongDiscover(thisApp.data.songs);
   },
 
-  initPlayer(){
-    new Player(select.containerOf.player);
+  displaySearchPage: function() {
+    const thisApp =  this;
+
+    new SongSearch(thisApp.data.songs);
   },
 
   initData: function(){
@@ -88,7 +90,7 @@ const app = {
         
         thisApp.displayHomePage();
         thisApp.displayDiscoverPage();
-        thisApp.initPlayer();
+        thisApp.displaySearchPage();
       });
   },
 
