@@ -43,14 +43,25 @@ class SongSearch extends SongLibrary{
       }
 
       const numberSongsEle = document.querySelector(select.search.numberSong);
-      const searchLenght = thisSongLibrary.search.length;
+      const searchLength = thisSongLibrary.search.length;
+      
+      const existingH3 = numberSongsEle.querySelector('h3');
+      
+      if (existingH3) {
+        existingH3.remove();
+      }
 
-      if(searchLenght > 0){
+      // Only create and append h3 if there are results or if no results found
+      if (searchLength > 0) {
+        const message = document.createElement('h3');
+        message.textContent = 'We have found ' + searchLength + ' songs...';
+        numberSongsEle.appendChild(message);
         numberSongsEle.classList.add('active');
-        numberSongsEle.textContent = 'We have found ' + searchLenght + ' songs...';
       } else {
+        const message = document.createElement('h3');
+        message.textContent = 'Sorry, we don\'t have this song...';
+        numberSongsEle.appendChild(message);
         numberSongsEle.classList.add('active');
-        numberSongsEle.textContent = 'Sorry, we don\'t have this song...';
       }
 
       for(const song of thisSongLibrary.search){

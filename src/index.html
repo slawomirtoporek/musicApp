@@ -60,9 +60,7 @@
             <button type="button">Search</button>
           </div>
         </div>
-        <div class="num-found-songs">
-          <h3></h3>
-        </div>
+        <div class="num-found-songs"></div>
         <div id="search-page"></div>
       </section>
       <section id="discover">
@@ -94,7 +92,7 @@
               <h3>Categories: </h3>
               <ul class="details-categories__list">
                 {{#each categories}}
-                <li class="details-categories__item">{{this}}</li>
+                <li class="details-categories__item">{{this}}<span>,</span></li>
                 {{/each}}
               </ul>
             </div>

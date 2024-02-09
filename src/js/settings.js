@@ -26,7 +26,7 @@ export const select = {
   search: {
     input: '.search-box input',
     button: '.search-box button',
-    numberSong: '.num-found-songs h3',
+    numberSong: '.num-found-songs',
   },
 };
 

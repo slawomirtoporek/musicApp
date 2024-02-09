@@ -52,20 +52,21 @@
     .details-categories {
       display: flex;
       flex-direction: row;
-
+      
       &__list {
         text-decoration: none;
         padding: 0;
         margin: 0;
         margin-right: 40px;
       }
-      
+
       &__item {
         display: inline-block;
         font-size: 20px;
+        text-transform: lowercase;
       }
     }
-    
+
     .details-ranking {
       &__position {
         font-weight: 200px;
@@ -73,7 +74,23 @@
       }
     }
   }
+
+  .details-categories__list {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 40px;
+
+    li:first-child {
+      text-transform: Capitalize;
+    }
+
+    li:last-child span {
+      display: none;
+    }
+  }
 }
+
 
 /* Green Audio Player */
 

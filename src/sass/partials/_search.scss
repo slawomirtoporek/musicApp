@@ -50,6 +50,7 @@
   .num-found-songs {
     margin: 0 auto;
     text-align: center;
+    display: none;
 
     h3 {
       font-size: 30px;
@@ -57,13 +58,16 @@
       line-height: 27px;
       font-weight: $font-semi-bold;
       font-family: $font-app;
-      display: none;
     }
 
-    h3.active {
-      display: block;
+    h3 {
+      
       margin-bottom: 95px;
     }
+  }
+
+  .num-found-songs.active {
+    display: block;
   }
 }
 
