@@ -8,7 +8,7 @@ export const settings = {
 export const select = {
   templateOf: {
     listSongs: '#template-list-songs',
-    subscribe: '#template-subscribe',
+    category: '#template-category-nav',
   },
   containerOf: {
     playerHome: '#home-page .player',
@@ -19,6 +19,7 @@ export const select = {
     discover: '#discover-page',
     search: '#search-page',
     subscribe: '#subscribe',
+    category: '#home-category',
   },
   nav: {
     links: '.main-nav a',
@@ -28,6 +29,10 @@ export const select = {
     button: '.search-box button',
     numberSong: '.num-found-songs',
   },
+  home: {
+    categoryLi: '#home-category .category-nav__item',
+    setAttributeData: '.song .details-categories__list',
+  }
 };
 
 export const classNames = {
@@ -41,4 +46,5 @@ export const classNames = {
 
 export const templates = {
   listSongs: Handlebars.compile(document.querySelector(select.templateOf.listSongs).innerHTML),
+  categoryNav: Handlebars.compile(document.querySelector(select.templateOf.category).innerHTML),
 };

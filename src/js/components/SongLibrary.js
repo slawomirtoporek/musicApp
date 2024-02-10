@@ -9,7 +9,9 @@ class SongLibrary{
     thisSongLibrary.data = data;
     thisSongLibrary.dataSong = {};
     thisSongLibrary.dom = {};
-    
+    thisSongLibrary.category = {};
+
+    thisSongLibrary.buildCategoriesList();
     thisSongLibrary.renderSongsList();
   }
 
@@ -19,6 +21,12 @@ class SongLibrary{
     thisSongLibrary.element = utils.createDOMFromHTML(generatedHTML);
     const list = document.querySelector(container);
     list.appendChild(thisSongLibrary.element);
+
+    const categoriesListElement = thisSongLibrary.element.querySelector(select.home.setAttributeData);
+    if (categoriesListElement) {
+      const categoriesString = song.categories.join(' ').toLowerCase();
+      categoriesListElement.setAttribute('data-categories', categoriesString);
+    }
   }
 
   extractAuthorNameFromFilename(filename, title){
@@ -62,13 +70,39 @@ class SongLibrary{
       ranking: data.ranking,
     };
   }
+  
+  buildCategoriesList(){
+    const thisSongLibrary = this;
+
+    thisSongLibrary.category.name = [];
+
+    for(const song of thisSongLibrary.data){
+      for(const nameCategory of song.categories){
+        if(!thisSongLibrary.category.name.includes(nameCategory)){
+          thisSongLibrary.category.name.push(nameCategory); 
+        }
+        console.log(thisSongLibrary.category);
+      }
+    }
+  }
+
+  renderCategoriesNav(){
+    const thisSongLibrary = this;
+    const generatedHTML = templates.categoryNav(thisSongLibrary.category);
+    thisSongLibrary.element = utils.createDOMFromHTML(generatedHTML);
+    const listCategory = document.querySelector(select.containerOf.category);
+    listCategory.appendChild(thisSongLibrary.element);
+  }
 
   renderSongsList(){
     const thisSongLibrary = this;
 
+    thisSongLibrary.renderCategoriesNav();
+
     for(const song of thisSongLibrary.data){
       thisSongLibrary.prepareSongData(song);
       thisSongLibrary.renderSong(thisSongLibrary.dataSong, select.containerOf.songs);
+
     }
     thisSongLibrary.initPlayer();
   }

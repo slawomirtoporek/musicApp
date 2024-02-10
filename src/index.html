@@ -31,6 +31,7 @@
 
     <div id="pages">
       <section id="home">
+        <div id="home-category"></div>
         <div id="home-page"></div>
         <div class="container">
           <div class="landing-section">
@@ -80,7 +81,7 @@
       <div class="wrapper">
         <div class="song">
           <div class="song__title">
-            <h3>{{ author }} - {{ title }}</h3>
+            <h3>{{author}} - {{title}}</h3>
           </div>
           <div class="player">
             <audio>
@@ -102,6 +103,14 @@
           </div>
         </div>
       </div>
+    </script>
+
+    <script id="template-category-nav" type="text/x-handlebars-template">
+      <ul class="category-nav__list">
+        {{#each name}}
+        <li class="category-nav__item">{{this}}</li>
+        {{/each}}
+      </ul>
     </script>
 
     <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
