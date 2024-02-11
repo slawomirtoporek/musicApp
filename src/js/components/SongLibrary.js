@@ -9,7 +9,7 @@ class SongLibrary{
     thisSongLibrary.data = data;
     thisSongLibrary.dataSong = {};
     thisSongLibrary.dom = {};
-    thisSongLibrary.category = {};
+    thisSongLibrary.categories = {};
 
     thisSongLibrary.buildCategoriesList();
     thisSongLibrary.renderSongsList();
@@ -74,23 +74,24 @@ class SongLibrary{
   buildCategoriesList(){
     const thisSongLibrary = this;
 
-    thisSongLibrary.category.name = [];
+    thisSongLibrary.categories.name = [];
 
     for(const song of thisSongLibrary.data){
-      for(const nameCategory of song.categories){
-        if(!thisSongLibrary.category.name.includes(nameCategory)){
-          thisSongLibrary.category.name.push(nameCategory); 
+      for(const nameCategories of song.categories){
+        if(!thisSongLibrary.categories.name.includes(nameCategories)){
+          thisSongLibrary.categories.name.push(nameCategories); 
         }
-        console.log(thisSongLibrary.category);
+        console.log('categories', thisSongLibrary.categories);
       }
     }
   }
 
   renderCategoriesNav(){
     const thisSongLibrary = this;
-    const generatedHTML = templates.categoryNav(thisSongLibrary.category);
+    const generatedHTML = templates.categoriesNav(thisSongLibrary.categories);
     thisSongLibrary.element = utils.createDOMFromHTML(generatedHTML);
-    const listCategory = document.querySelector(select.containerOf.category);
+    console.log(thisSongLibrary.element);
+    const listCategory = document.querySelector(select.containerOf.categoriesHome);
     listCategory.appendChild(thisSongLibrary.element);
   }
 
