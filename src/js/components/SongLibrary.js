@@ -1,4 +1,4 @@
-import { templates, select } from '../settings.js';
+import { templates, select, classNames } from '../settings.js';
 import { utils } from '../utils.js';
 import Player from './Player.js';
 
@@ -25,7 +25,7 @@ class SongLibrary{
     const categoriesListElement = thisSongLibrary.element.querySelector(select.home.setAttributeData);
     if (categoriesListElement) {
       const categoriesString = song.categories.join(' ').toLowerCase();
-      categoriesListElement.setAttribute('data-categories', categoriesString);
+      categoriesListElement.setAttribute(select.home.dataCategories, categoriesString);
     }
   }
 
@@ -81,7 +81,6 @@ class SongLibrary{
         if(!thisSongLibrary.categories.name.includes(nameCategories)){
           thisSongLibrary.categories.name.push(nameCategories); 
         }
-        console.log('categories', thisSongLibrary.categories);
       }
     }
   }
@@ -90,21 +89,59 @@ class SongLibrary{
     const thisSongLibrary = this;
     const generatedHTML = templates.categoriesNav(thisSongLibrary.categories);
     thisSongLibrary.element = utils.createDOMFromHTML(generatedHTML);
-    console.log(thisSongLibrary.element);
     const listCategory = document.querySelector(select.containerOf.categoriesHome);
     listCategory.appendChild(thisSongLibrary.element);
+  }
+
+  filterSongsByCategory(){
+    const listCategories = document.querySelector(select.home.categoriesList);
+    
+    listCategories.addEventListener('click', function(event){
+      event.preventDefault();
+  
+      const clickedElement = event.target.closest('li');
+  
+      if(clickedElement){
+        if(clickedElement && clickedElement.classList.contains(classNames.categories.active)){
+          clickedElement.classList.remove(classNames.categories.active);
+
+          const songs = document.querySelectorAll(select.home.songs);
+          for(const song of songs){
+            song.classList.remove(classNames.categories.searchInactive);
+          }
+        } else {
+          const activeCategories = listCategories.querySelectorAll(select.home.activeCategories);
+          for(const category of activeCategories){
+            category.classList.remove(classNames.categories.active);
+          }
+          clickedElement.classList.add(classNames.categories.active);
+  
+          const songs = document.querySelectorAll(select.home.songs);
+          for(const song of songs){
+            const songCategories = song.querySelector(select.home.categoriesSong);
+            const dataAttributes = songCategories.getAttribute(select.home.dataCategories);
+            const attributeArray = dataAttributes.split(' ');
+            const cleanCategory = clickedElement.innerText.replace(',', '').toLowerCase();
+            if(!attributeArray.includes(cleanCategory)){
+              song.classList.add(classNames.categories.searchInactive);
+            } else {
+              song.classList.remove(classNames.categories.searchInactive);
+            }
+          }
+        }
+      }
+    });
   }
 
   renderSongsList(){
     const thisSongLibrary = this;
 
-    thisSongLibrary.renderCategoriesNav();
-
     for(const song of thisSongLibrary.data){
       thisSongLibrary.prepareSongData(song);
       thisSongLibrary.renderSong(thisSongLibrary.dataSong, select.containerOf.songs);
-
     }
+    thisSongLibrary.renderCategoriesNav();
+    thisSongLibrary.filterSongsByCategory();
     thisSongLibrary.initPlayer();
   }
 

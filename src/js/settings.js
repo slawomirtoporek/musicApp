@@ -30,8 +30,13 @@ export const select = {
     numberSong: '.num-found-songs',
   },
   home: {
-    //categoryLi: '#home-categories .categories-nav__item',
+    categoriesList: '#home-categories .categories-nav__list',
     setAttributeData: '.song .details-categories__list',
+    dataCategories: 'data-categories',
+    songs: '#home .song',
+    categoriesSong: '.details-categories__list',
+    inactive: '.search-inactive',
+    activeCategories: '.active',
   }
 };
 
@@ -41,6 +46,10 @@ export const classNames = {
   },
   nav: {
     active: 'active',
+  },
+  categories: {
+    active: 'active',
+    searchInactive: 'search-inactive',
   }
 };
 
