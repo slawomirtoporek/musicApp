@@ -9,6 +9,7 @@ export const select = {
   templateOf: {
     listSongs: '#template-list-songs',
     categoriesHome: '#template-categories-nav',
+    categoriesSearch: '#template-categories-search',
   },
   containerOf: {
     playerHome: '#home-page .player',
@@ -20,6 +21,7 @@ export const select = {
     search: '#search-page',
     subscribe: '#subscribe',
     categoriesHome: '#home-categories',
+    categoriesSearch: '#search-box__categories',
   },
   nav: {
     links: '.main-nav a',
@@ -56,4 +58,5 @@ export const classNames = {
 export const templates = {
   listSongs: Handlebars.compile(document.querySelector(select.templateOf.listSongs).innerHTML),
   categoriesNav: Handlebars.compile(document.querySelector(select.templateOf.categoriesHome).innerHTML),
+  categoriesSearch: Handlebars.compile(document.querySelector(select.templateOf.categoriesSearch).innerHTML),
 };
