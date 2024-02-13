@@ -1,6 +1,7 @@
 import { select } from '../settings.js';
 import SongLibrary from './SongLibrary.js';
 import Player from './Player.js';
+import { templates } from '../settings.js';
 
 class SongSearch extends SongLibrary{
   constructor(data){
@@ -10,8 +11,9 @@ class SongSearch extends SongLibrary{
     thisSongLibrary.search = [];
 
     thisSongLibrary.renderSongsList();
+    thisSongLibrary.renderCategoriesNav(templates.categoriesSearch, select.containerOf.categoriesSearch);
   }
-
+  
   renderSongsList(){
     const thisSongLibrary = this;
 
@@ -51,7 +53,6 @@ class SongSearch extends SongLibrary{
         existingH3.remove();
       }
 
-      // Only create and append h3 if there are results or if no results found
       if (searchLength > 0) {
         const message = document.createElement('h3');
         message.textContent = 'We have found ' + searchLength + ' songs...';

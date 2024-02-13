@@ -10,7 +10,7 @@ class SongLibrary{
     thisSongLibrary.dataSong = {};
     thisSongLibrary.dom = {};
     thisSongLibrary.categories = {};
-
+    
     thisSongLibrary.buildCategoriesList();
     thisSongLibrary.renderSongsList();
   }
@@ -85,11 +85,11 @@ class SongLibrary{
     }
   }
 
-  renderCategoriesNav(){
+  renderCategoriesNav(templates, container){
     const thisSongLibrary = this;
-    const generatedHTML = templates.categoriesNav(thisSongLibrary.categories);
+    const generatedHTML = templates(thisSongLibrary.categories);
     thisSongLibrary.element = utils.createDOMFromHTML(generatedHTML);
-    const listCategory = document.querySelector(select.containerOf.categoriesHome);
+    const listCategory = document.querySelector(container);
     listCategory.appendChild(thisSongLibrary.element);
   }
 
@@ -140,7 +140,7 @@ class SongLibrary{
       thisSongLibrary.prepareSongData(song);
       thisSongLibrary.renderSong(thisSongLibrary.dataSong, select.containerOf.songs);
     }
-    thisSongLibrary.renderCategoriesNav();
+    thisSongLibrary.renderCategoriesNav(templates.categoriesNav, select.containerOf.categoriesHome);
     thisSongLibrary.filterSongsByCategory();
     thisSongLibrary.initPlayer();
   }

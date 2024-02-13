@@ -56,9 +56,14 @@
         <div class="wrapper">
           <h2 class="section-title">Search</h2>
           <div class="search-box">
-            <label for="music-search">Name</label>
-            <input type="text" id="music-search">
-            <button type="button">Search</button>
+            <div class="search-box__name">
+              <label for="music-search">Name</label>
+              <input type="text" id="music-search">
+            </div>
+            <div id="search-box__categories"></div>
+            <div class="btn">
+              <button type="button">Search</button>
+            </div>
           </div>
         </div>
         <div class="num-found-songs"></div>
@@ -111,10 +116,22 @@
           <h3 class="categories-nav__header">Categories: </h3>
           <ul class="categories-nav__list">
             {{#each name}}
-            <li class="categories-nav__item">{{this}}<span>,</span></li>
+              <li class="categories-nav__item">{{this}}<span>,</span></li>
             {{/each}}
           </ul>
         </div>
+      </div>
+    </script>
+
+    <script id="template-categories-search" type="text/x-handlebars-template">
+      <div class="search-select">
+        <label for="music-categories">Category</label>
+        <select id="music-categories">
+          <option class="option" value="selected" selected></option>
+          {{#each name}}
+            <option class="option" value="{{this}}">{{this}}</option>
+          {{/each}}
+        </select>
       </div>
     </script>
 
