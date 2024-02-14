@@ -30,6 +30,7 @@ export const select = {
     input: '.search-box input',
     button: '.search-box button',
     numberSong: '.num-found-songs',
+    selectedCategories: 'music-categories',
   },
   home: {
     categoriesList: '#home-categories .categories-nav__list',

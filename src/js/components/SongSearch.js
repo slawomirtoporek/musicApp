@@ -13,7 +13,7 @@ class SongSearch extends SongLibrary{
     thisSongLibrary.renderSongsList();
     thisSongLibrary.renderCategoriesNav(templates.categoriesSearch, select.containerOf.categoriesSearch);
   }
-  
+
   renderSongsList(){
     const thisSongLibrary = this;
 
@@ -25,6 +25,9 @@ class SongSearch extends SongLibrary{
 
     button.addEventListener('click', function(){
       const currentWord = input.value.toLowerCase();
+      const selectedCategory = document.getElementById(select.search.selectedCategories);
+      const selectedCategoryValue = selectedCategory.value;
+      const category = selectedCategoryValue.toLowerCase();
 
       thisSongLibrary.search = [];
 
@@ -36,8 +39,18 @@ class SongSearch extends SongLibrary{
 
         const title = thisSongLibrary.dataSong.title.toLowerCase();
         const author = thisSongLibrary.dataSong.author.toLowerCase();
+        const categories = thisSongLibrary.dataSong.categories;
         
-        if(title.includes(currentWord) || author.includes(currentWord)){
+        const smallLettetCategory = [];
+        
+        for(const category of categories){
+          smallLettetCategory.push(category.toLowerCase());
+        }
+        
+        const matchesSearch = title.includes(currentWord) || author.includes(currentWord);
+        const matchesCategory = category != 'selected' ? smallLettetCategory.includes(category) : true;
+        
+        if(matchesSearch && matchesCategory){
           if(!thisSongLibrary.search.some(track => track.idSong === thisSongLibrary.dataSong.idSong)){
             thisSongLibrary.search.push(thisSongLibrary.dataSong);
           }
@@ -47,10 +60,10 @@ class SongSearch extends SongLibrary{
       const numberSongsEle = document.querySelector(select.search.numberSong);
       const searchLength = thisSongLibrary.search.length;
       
-      const existingH3 = numberSongsEle.querySelector('h3');
+      const currentH3 = numberSongsEle.querySelector('h3');
       
-      if (existingH3) {
-        existingH3.remove();
+      if (currentH3) {
+        currentH3.remove();
       }
 
       if (searchLength > 0) {
