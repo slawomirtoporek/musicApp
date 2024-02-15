@@ -36,6 +36,10 @@
       padding-right: 5px;
       margin-bottom: 5px;
 
+      span {
+        color: $color-light;
+      }
+
       &:hover {
         color: $color-main;
       }

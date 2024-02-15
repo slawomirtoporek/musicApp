@@ -40,6 +40,10 @@ export const select = {
     categoriesSong: '.details-categories__list',
     inactive: '.search-inactive',
     activeCategories: '.active',
+    buttonJoinNow: '.btn-join-now',
+  },
+  joinNow: {
+    page: '.btn-join-now',
   }
 };
 

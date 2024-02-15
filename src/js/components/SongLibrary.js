@@ -13,6 +13,7 @@ class SongLibrary{
     
     thisSongLibrary.buildCategoriesList();
     thisSongLibrary.renderSongsList();
+    thisSongLibrary.btnFontUppercase();
   }
 
   renderSong(song, container){
@@ -147,6 +148,12 @@ class SongLibrary{
 
   initPlayer(){
     new Player(select.containerOf.playerHome);
+  }
+
+  btnFontUppercase(){
+    const button = document.querySelector(select.home.buttonJoinNow);
+
+    button.style.textTransform = 'uppercase';
   }
 }
 export default SongLibrary;

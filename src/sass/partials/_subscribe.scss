@@ -100,9 +100,15 @@
     color: $color-light;
     font-weight: $font-bold;
     font-family: $font-app;
-    text-transform: uppercase;
     text-align: right;
     text-align: center;
+    transition: background-color 0.2s ease;
+  }
+  
+  .btn-join-now:hover {
+    background-color: $color-light;
+    color: $color-main;
+    border: 3px solid $color-main;
   }
 }
 

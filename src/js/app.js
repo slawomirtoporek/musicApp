@@ -56,6 +56,23 @@ const app = {
     }
   },
 
+  joinNowPageRedirection: function(){
+    const thisApp = this;
+
+    thisApp.redirectionPage = document.querySelector(select.joinNow.page);
+    
+    thisApp.redirectionPage.addEventListener('click', function(event){
+      event.preventDefault();
+      console.log('click');
+      
+      const id = thisApp.redirectionPage.getAttribute('href').replace('#', '');
+        
+      thisApp.activatePage(id);
+
+    });
+
+  },
+
   displayHomePage: function(){
     const thisApp = this;
 
@@ -99,6 +116,7 @@ const app = {
 
     thisApp.initData();
     thisApp.initPages();
+    thisApp.joinNowPageRedirection();
   }
 };
 

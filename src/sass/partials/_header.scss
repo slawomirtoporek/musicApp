@@ -8,11 +8,11 @@
   
   img {
     width: 100%;
-    height: 90vh;
+    height: 100%;
   }
 
   .shadow-box {
-    background: linear-gradient(to bottom, rgba(31, 19, 19, 0) 5%, rgba(20, 20, 20, 0)100%);
+    background: linear-gradient(0deg, rgba(19,19,19,1) 2%, rgba(19,19,19,0) 90%);
     width: 100%;
     height: 50%;
     position: absolute;
@@ -91,7 +91,7 @@
     }
 
     .header__subtitle {
-      top: 62%;
+      top: 59%;
       font-size: 26px;
       line-height: 26px;;
     }
@@ -106,7 +106,7 @@
     }
 
     .header__subtitle {
-      top: 61%;
+      top: 58%;
       font-size: 23px;
       line-height: 23px;
     }
@@ -122,7 +122,6 @@
     }
 
     .header__subtitle {
-      top: 62%;
       font-size: 21px;
       letter-spacing: 6px;
       line-height: 21px;
@@ -140,10 +139,20 @@
     }
 
     .header__subtitle {
-      top: 61%;
       font-size: 20px;
       letter-spacing: 6px;
       line-height: 20px;
+    }
+  }
+}
+
+@media(max-width: 1024px) {
+  .header .header-wrapper {
+    .header__title {
+      top: 33%;
+      font-size: 90px;
+      letter-spacing: 73px;
+      left: 53%;
     }
   }
 }
@@ -174,23 +183,30 @@
   }
 }
 
-@media(max-width: 415px) {
+@media(max-width: 500px) {
   .header .header-wrapper {
-    img {
-      height: 40vh;
-    }
-
     .header__title {
-      font-size: 33px;
-      letter-spacing: 33px;
-      left: 54%;
+      font-size: 46px;
+      letter-spacing: 36px;
     }
 
     .header__subtitle {
-      top: 57%;
-      font-size: 10px;
-      letter-spacing: 1px;
-      line-height: 8px;
+      top: 58%;
+      font-size: 13px;
+    }
+  }
+}
+
+@media(max-width: 431px) {
+  .header .header-wrapper {
+    .header__title {
+      font-size: 38px;
+      letter-spacing: 33px;
+    }
+
+    .header__subtitle {
+      top: 58%;
+      font-size: 11px;
     }
   }
 
@@ -200,7 +216,28 @@
 
     .main-nav__link {
       padding: 0 15px;
-      font-size: 15px;
+      font-size: 18px;
+    }
+  }
+}
+
+@media(max-width: 415px) {
+  .header .header-wrapper {
+    img {
+      height: 40vh;
+    }
+
+    .header__title {
+      font-size: 30px;
+      letter-spacing: 33px;
+      left: 54%;
+    }
+
+    .header__subtitle {
+      top: 57%;
+      font-size: 10px;
+      letter-spacing: 1px;
+      line-height: 8px;
     }
   }
 }
@@ -248,3 +285,19 @@
     }
   }
 }
+
+@media(max-width: 320px) {
+  .header .header-wrapper {
+    .header__title {
+      font-size: 20px;
+      letter-spacing: 27px;
+      left: 54%;
+    }
+
+    .header__subtitle {
+      font-size: 7px;
+      letter-spacing: 1.5px;
+    }
+  }
+}
+
